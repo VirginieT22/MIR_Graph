@@ -1,0 +1,10 @@
+MATCH
+TOLERANT pitch=0.0, duration=2.0, gap=0.0
+ALPHA 0.0
+(e0:Event)-[:NEXT]->(e1:Event)-[:NEXT]->(e2:Event)-[:NEXT]->(e3:Event)-[:NEXT]->(e4:Event),
+(e0)--(f0{class:'e', octave:5, dur:16}),
+(e1)--(f1{class:'d', octave:5, dur:16}),
+(e2)--(f2{class:'c', octave:5, dur:16}),
+(e3)--(f3{class:'b', octave:4, dur:16}),
+(e4)--(f4{class:'a', octave:4, dur:16})
+RETURN e0.source AS source, e0.start AS start;

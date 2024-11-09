@@ -1,0 +1,12 @@
+MATCH
+ALLOW_TRANSPOSITION
+TOLERANT pitch=0.5, duration=2.0, gap=0.125
+ALPHA 0.5
+(e0:Event)-[:NEXT]->(e1:Event)-[:NEXT]->(e2:Event)-[:NEXT]->(e3:Event)-[:NEXT]->(e4:Event)-[:NEXT]->(e5:Event),
+(e0)--(f0{class:'b', octave:4, dur:8}),
+(e1)--(f1{class:'c', octave:5, dur:8}),
+(e2)--(f2{class:'d', octave:5, dur:8}),
+(e3)--(f3{class:'d', octave:5, dur:8}),
+(e4)--(f4{class:'d', octave:5, dur:8}),
+(e5)--(f5{class:'e', octave:5, dur:8})
+RETURN e0.source AS source, e0.start AS start;
